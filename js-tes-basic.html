@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contoh Dialog dengan jQuery UI</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    #dialog {
+      display: none;
+    }
+
+    #bukaDialog {
+      padding: 10px 20px;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 16px;
+      background-color: #b60d0d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button id="bukaDialog">SHOW</button>
+
+<div id="dialog" title="Dialog jQuery UI">
+  <p>Ini adalah jendela dialog sederhana menggunakan jQuery UI.</p>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#dialog").dialog({
+      autoOpen: false,
+      modal: true,
+    });
+
+    $("#bukaDialog").click(function() {
+      $("#dialog").dialog("open");
+    });
+  });
+</script>
+
+</body>
+</html>

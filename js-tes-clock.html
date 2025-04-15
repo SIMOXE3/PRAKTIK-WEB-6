@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jam Digital Real-Time</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f0f0f0;
+    }
+
+    #clock {
+      font-size: 36px;
+      font-weight: bold;
+      background-color: #fff;
+      display: inline-block;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div id="clock">Loading...</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const tanggal = now.toLocaleDateString();
+      const waktu = now.toLocaleTimeString();
+      document.getElementById('clock').innerHTML = tanggal + ' ' + waktu;
+    }
+
+    setInterval(updateClock, 1000); // update setiap 1 detik
+    updateClock(); // panggil sekali langsung saat load
+  </script>
+</body>
+</html>
